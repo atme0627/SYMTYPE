@@ -25,7 +25,10 @@ export function RetroWindow({ title, children }: Props) {
         <span>表示(V)</span>
         <span>ヘルプ(H)</span>
       </div>
-      <div className="retro-client">{children}</div>
+      <div className="retro-client">
+        {children}
+        <span className="retro-credit">Created by meza</span>
+      </div>
     </div>
   )
 }

@@ -43,11 +43,11 @@ export function TitleScreen({ settings, onChange, onStart }: Props) {
       </div>
 
       <div className="title-actions">
-        <button type="button" className="w2k-btn title-start-btn" onClick={onStart}>
+        <button type="button" className="title-start-btn" onClick={onStart}>
           ▶ START
         </button>
       </div>
-      <div className="title-hint">スペースキーでも開始できます / IME は OFF にしてね</div>
+      <div className="title-hint">スペースキーでも開始できます</div>
     </div>
   )
 }

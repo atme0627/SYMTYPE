@@ -5,8 +5,9 @@
 }
 
 .toggle-group-label {
-  width: 84px;
-  font-size: 14px;
+  width: 92px;
+  font-size: 17px;
+  font-weight: bold;
   color: #222;
   text-align: right;
   flex-shrink: 0;
@@ -22,7 +23,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 14px;
+  font-size: 17px;
   color: #111;
   cursor: pointer;
   user-select: none;
