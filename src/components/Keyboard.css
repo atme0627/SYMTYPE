@@ -1,0 +1,84 @@
+.keyboard {
+  width: 720px;
+  max-width: 100%;
+  background: #1d1f24;
+  border: 1px solid #2c2f36;
+  border-radius: 10px;
+  padding: 14px 14px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.kb-row {
+  display: flex;
+  gap: 6px;
+}
+
+.kb-key {
+  height: 44px;
+  background: #292c33;
+  border: 1px solid #34383f;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa0a8;
+  min-width: 0;
+  transition:
+    background 0.06s,
+    color 0.06s,
+    box-shadow 0.06s;
+}
+
+.kb-key--mod {
+  color: #5d636c;
+  font-size: 10px;
+}
+
+.kb-key--hit {
+  background: #39d98a;
+  border-color: #39d98a;
+  color: #10131a;
+  box-shadow: 0 0 12px rgba(57, 217, 138, 0.55);
+}
+
+.kb-key--hit .kb-cap--dual span {
+  color: #10131a;
+}
+
+.kb-cap {
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+}
+
+.kb-cap--label {
+  font-size: 10px;
+  font-family: inherit;
+}
+
+.kb-cap--dual {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.kb-cap--dual span {
+  font-size: 11px;
+}
+
+.kb-cap--dual span:first-child {
+  color: #6b7280;
+}
+
+.kb-layout-name {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 10px;
+  color: #4b515a;
+  letter-spacing: 0.15em;
+}

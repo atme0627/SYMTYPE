@@ -1,0 +1,41 @@
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-group-label {
+  width: 72px;
+  font-size: 12px;
+  color: #333;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.toggle-group-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.w2k-btn {
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-family: inherit;
+  color: #111;
+  cursor: pointer;
+  min-width: 64px;
+}
+
+.w2k-btn:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+}
+
+.w2k-btn--selected {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #bdd3e8;
+  font-weight: bold;
+}

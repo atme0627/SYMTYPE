@@ -1,0 +1,76 @@
+.retro-window {
+  width: 680px;
+  max-width: 100%;
+  background: #d4d0c8;
+  border: 1px solid #0a0a0a;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #808080,
+    6px 6px 0 rgba(0, 0, 0, 0.35);
+  padding: 3px;
+  font-family: Tahoma, 'MS UI Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+.retro-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px 3px 6px;
+  background: linear-gradient(90deg, #0a246a 0%, #3a6ea5 60%, #a6caf0 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.retro-titlebar-icon {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  background: #000;
+  color: #39d98a;
+  padding: 0 3px;
+  line-height: 14px;
+}
+
+.retro-titlebar-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.retro-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.retro-tb-btn {
+  width: 18px;
+  height: 16px;
+  background: #d4d0c8;
+  color: #000;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: center;
+  border: 1px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  font-family: 'Courier New', monospace;
+}
+
+.retro-menubar {
+  display: flex;
+  gap: 14px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #222;
+  border-bottom: 1px solid #808080;
+  box-shadow: 0 1px 0 #ffffff;
+  user-select: none;
+}
+
+.retro-client {
+  min-height: 430px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+}

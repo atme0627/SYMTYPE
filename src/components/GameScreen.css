@@ -1,0 +1,115 @@
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.game-status {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0a246a;
+  padding: 4px 8px;
+  background: #c6d3df;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.game-status-miss {
+  color: #a40000;
+}
+
+.game-field {
+  flex: 1;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 26px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+  position: relative;
+}
+
+.game-ready {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #3a6ea5;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.game-line {
+  text-align: center;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 24px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.game-ch {
+  display: inline-block;
+  padding: 1px 0;
+}
+
+.game-ch--done {
+  color: #b5b5b5;
+}
+
+.game-ch--cur {
+  background: #0a246a;
+  color: #ffffff;
+}
+
+.game-ch--flash {
+  background: #d40000;
+  animation: miss-shake 0.18s ease-out;
+}
+
+@keyframes miss-shake {
+  0% {
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.game-ch--todo {
+  color: #111111;
+}
+
+.game-next {
+  text-align: center;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 13px;
+  color: #999;
+}
+
+.game-help {
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+}
+
+.game-help-warning {
+  color: #a40000;
+  font-weight: bold;
+}

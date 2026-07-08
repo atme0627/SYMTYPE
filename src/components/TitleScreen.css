@@ -1,0 +1,63 @@
+.title-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+.title-logo {
+  text-align: center;
+  margin-top: 8px;
+  user-select: none;
+}
+
+.title-logo-deco {
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 13px;
+  color: #3a6ea5;
+  letter-spacing: 0.35em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.title-logo-main {
+  margin: 2px 0;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 44px;
+  letter-spacing: 0.22em;
+  color: #0a246a;
+  text-shadow: 2px 2px 0 #a6caf0;
+}
+
+.title-logo-sub {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 0.2em;
+}
+
+.title-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.title-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title-start-btn {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 32px;
+  color: #0a246a;
+}
+
+.title-hint {
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+}

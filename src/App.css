@@ -1,0 +1,43 @@
+:root {
+  --bg: #17181c;
+  --fg: #c9cdd3;
+  --accent: #39d98a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Hiragino Kaku Gothic ProN',
+    'Yu Gothic UI',
+    'Meiryo',
+    sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 16px 28px;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.page-footer {
+  margin-top: auto;
+  padding-top: 8px;
+}

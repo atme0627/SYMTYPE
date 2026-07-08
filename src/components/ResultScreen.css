@@ -1,0 +1,72 @@
+.result-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.result-header {
+  text-align: center;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a246a;
+  letter-spacing: 0.15em;
+}
+
+.result-score {
+  text-align: center;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 16px;
+  color: #333;
+}
+
+.result-score strong {
+  font-size: 34px;
+  color: #a40000;
+  margin-left: 10px;
+}
+
+.result-stats {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-size: 13px;
+  color: #333;
+  padding: 6px 8px;
+  background: #c6d3df;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.result-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+}
+
+.result-name-input {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #ffffff;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-family: inherit;
+  width: 160px;
+}
+
+.result-registered {
+  font-size: 13px;
+  font-weight: bold;
+  color: #0a6a24;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto;
+}
