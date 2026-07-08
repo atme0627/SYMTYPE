@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "symtype",
+  "compatibility_date": "2026-07-01",
+  // Worker スクリプトは無し。ビルド成果物 dist/ を静的アセットとして配信する
+  "assets": {
+    "directory": "./dist",
+    // SPA だが単一画面でクライアントルーティングは無いため、
+    // 未知パスは 404 でよい(single-page-application にはしない)
+    "not_found_handling": "none"
+  }
+}

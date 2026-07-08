@@ -67,6 +67,17 @@ npm run validate:problems  # 問題データだけ検証
 
 `npm run build` で `dist/` に静的ファイルが出る。`base: './'` の相対パス設定なので、GitHub Pages のサブパスでも Cloudflare Workers の静的アセットでもそのまま動く。
 
+### Cloudflare Workers
+
+[wrangler.jsonc](wrangler.jsonc) に、`dist/` を静的アセットとして配信する assets-only Worker(Worker スクリプト無し)を定義済み。初回だけ Cloudflare へログインが必要:
+
+```sh
+npx wrangler login   # ブラウザで Cloudflare 認証(初回のみ)
+npm run deploy       # build してから wrangler deploy
+```
+
+`npm run deploy` は `npm run build`(問題データ検証 + 型チェック + ビルド)→ `wrangler deploy` を実行する。`https://symtype.<account>.workers.dev` で公開される。
+
 ## 将来の拡張メモ
 
 - ランキング機能は一度実装したが撤去した(`git log` の 4ab6cf7 以前に localStorage 版の実装がある)。復活させるなら Cloudflare Workers + KV でグローバルランキングにするのが良い
