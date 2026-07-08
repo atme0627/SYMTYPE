@@ -1,7 +1,7 @@
 .retro-window {
-  /* ウィンドウ内で使うフォント。ドット表示モード(.pixel)が上書きする */
-  --font-ui: Tahoma, 'MS UI Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
-  --font-mono: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  /* ウィンドウ内は常に当時のビットマップフォント風(DotGothic16)で表示する */
+  --font-ui: 'DotGothic16', 'MS Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-mono: 'DotGothic16', 'MS Gothic', monospace;
 
   width: 680px;
   max-width: 100%;
@@ -22,7 +22,7 @@
   padding: 3px 4px 3px 6px;
   background: linear-gradient(90deg, #0a246a 0%, #3a6ea5 60%, #a6caf0 100%);
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   user-select: none;
 }
@@ -65,7 +65,7 @@
   display: flex;
   gap: 14px;
   padding: 3px 8px;
-  font-size: 12px;
+  font-size: 13px;
   color: #222;
   background: #d4d0c8;
   border-bottom: 1px solid #808080;

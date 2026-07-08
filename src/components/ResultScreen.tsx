@@ -1,37 +1,13 @@
-import { useState } from 'react'
-import type { GameResult, Settings } from '../types'
-import { addRankingEntry, loadNickname, saveNickname } from '../lib/storage'
-import { RankingBoard } from './RankingBoard'
+import type { GameResult } from '../types'
 import './ResultScreen.css'
 
 interface Props {
   result: GameResult
-  settings: Settings
   onRetry: () => void
   onTitle: () => void
 }
 
-export function ResultScreen({ result, settings, onRetry, onTitle }: Props) {
-  const [name, setName] = useState(loadNickname)
-  const [registered, setRegistered] = useState(false)
-  const [rankingVersion, setRankingVersion] = useState(0)
-
-  const register = () => {
-    const trimmed = name.trim().slice(0, 12)
-    saveNickname(trimmed)
-    addRankingEntry(settings.genre, settings.difficulty, {
-      name: trimmed || '???',
-      score: result.score,
-      cpm: result.cpm,
-      accuracy: result.accuracy,
-      misses: result.misses,
-      timeMs: result.timeMs,
-      date: new Date().toLocaleDateString('ja-JP'),
-    })
-    setRegistered(true)
-    setRankingVersion((v) => v + 1)
-  }
-
+export function ResultScreen({ result, onRetry, onTitle }: Props) {
   return (
     <div className="result-screen">
       <div className="result-header">*** RESULT ***</div>
@@ -47,36 +23,15 @@ export function ResultScreen({ result, settings, onRetry, onTitle }: Props) {
         <span>CPM {result.cpm}</span>
       </div>
 
-      <div className="result-register">
-        {registered ? (
-          <span className="result-registered">ランキングに登録しました!</span>
-        ) : (
-          <>
-            <input
-              type="text"
-              className="result-name-input"
-              placeholder="ニックネーム"
-              maxLength={12}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') register()
-                e.stopPropagation()
-              }}
-            />
-            <button type="button" className="w2k-btn" onClick={register}>
-              ランキング登録
-            </button>
-          </>
-        )}
+      <div className="result-comment">
+        {result.misses === 0
+          ? 'PERFECT! ノーミス達成 \\(^o^)/'
+          : result.accuracy >= 0.95
+            ? 'GREAT! かなり正確 (^_^)b'
+            : result.accuracy >= 0.85
+              ? 'GOOD! その調子 (^o^)'
+              : 'ドンマイ! 練習あるのみ (>_<)'}
       </div>
-
-      <RankingBoard
-        genre={settings.genre}
-        difficulty={settings.difficulty}
-        version={rankingVersion}
-        highlightScore={registered ? result.score : undefined}
-      />
 
       <div className="result-actions">
         <button type="button" className="w2k-btn" onClick={onRetry}>

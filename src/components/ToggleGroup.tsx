@@ -12,7 +12,7 @@ interface Props<T extends string | number> {
   onChange: (value: T) => void
 }
 
-/** Win2000 風のボタンで選択肢をトグルする汎用グループ */
+/** 当時の Windows 風ラジオボタンで選択肢を切り替える汎用グループ */
 export function ToggleGroup<T extends string | number>({
   label,
   options,
@@ -22,16 +22,18 @@ export function ToggleGroup<T extends string | number>({
   return (
     <div className="toggle-group">
       <span className="toggle-group-label">{label}</span>
-      <div className="toggle-group-buttons">
+      <div className="toggle-group-options">
         {options.map((opt) => (
-          <button
-            key={opt.value}
-            type="button"
-            className={`w2k-btn${opt.value === value ? ' w2k-btn--selected' : ''}`}
-            onClick={() => onChange(opt.value)}
-          >
-            {opt.label}
-          </button>
+          <label className="radio-option" key={opt.value}>
+            <input
+              type="radio"
+              className="radio-input"
+              name={label}
+              checked={opt.value === value}
+              onChange={() => onChange(opt.value)}
+            />
+            <span>{opt.label}</span>
+          </label>
         ))}
       </div>
     </div>

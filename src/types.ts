@@ -19,8 +19,6 @@ export interface Settings {
   difficulty: Difficulty
   layout: LayoutId
   theme: ThemeId
-  /** true なら昔のビットマップフォント風(ドットが見える)表示 */
-  pixel: boolean
 }
 
 /** 1ゲーム終了時の生の計測値 */
@@ -35,14 +33,4 @@ export interface GameResult extends RawResult {
   cpm: number
   accuracy: number
   score: number
-}
-
-export interface RankingEntry {
-  name: string
-  score: number
-  cpm: number
-  accuracy: number
-  misses: number
-  timeMs: number
-  date: string
 }

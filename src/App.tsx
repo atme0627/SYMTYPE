@@ -73,7 +73,7 @@ export default function App() {
       : 'SYMTYPE.EXE'
 
   return (
-    <div className={`page theme-${settings.theme}${settings.pixel ? ' pixel' : ''}`}>
+    <div className={`page theme-${settings.theme}`}>
       <main className="page-main" style={{ zoom }}>
         <RetroWindow title={windowTitle}>
           {phase === 'title' && (
@@ -81,12 +81,7 @@ export default function App() {
           )}
           {phase === 'play' && <GameScreen lines={lines} game={game} />}
           {phase === 'result' && result && (
-            <ResultScreen
-              result={result}
-              settings={settings}
-              onRetry={start}
-              onTitle={() => setPhase('title')}
-            />
+            <ResultScreen result={result} onRetry={start} onTitle={() => setPhase('title')} />
           )}
         </RetroWindow>
         <Keyboard layout={layout} highlight={highlight} />

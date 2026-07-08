@@ -1,14 +1,15 @@
 .result-screen {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
   flex: 1;
+  justify-content: center;
 }
 
 .result-header {
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   color: #0a246a;
   letter-spacing: 0.15em;
@@ -17,58 +18,41 @@
 .result-score {
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
 }
 
 .result-score strong {
-  font-size: 34px;
+  font-size: 48px;
   color: #a40000;
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 .result-stats {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 20px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
-  padding: 6px 8px;
+  padding: 8px;
   background: #c6d3df;
   border: 1px solid;
   border-color: #808080 #ffffff #ffffff #808080;
 }
 
-.result-register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  min-height: 30px;
-}
-
-.result-name-input {
-  border: 2px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
-  background: #ffffff;
-  padding: 4px 8px;
-  font-size: 13px;
-  font-family: inherit;
-  width: 160px;
-}
-
-.result-registered {
-  font-size: 13px;
-  font-weight: bold;
+.result-comment {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
   color: #0a6a24;
 }
 
 .result-actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: auto;
+  gap: 14px;
+  margin-top: 12px;
 }
 
 /* ---- Windows XP (Luna) テーマ ---- */
@@ -80,8 +64,4 @@
 
 .theme-xp .result-header {
   color: #0855dd;
-}
-
-.theme-xp .result-name-input {
-  border: 1px solid #7f9db9;
 }

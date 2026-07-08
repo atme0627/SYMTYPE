@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #0a246a;
   padding: 4px 8px;
@@ -41,7 +41,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   color: #3a6ea5;
   animation: blink 1s step-end infinite;
 }
@@ -55,7 +55,7 @@
 .game-line {
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 24px;
+  font-size: 28px;
   letter-spacing: 1px;
   white-space: nowrap;
   overflow-x: auto;
@@ -99,13 +99,13 @@
 .game-next {
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
 }
 
 .game-help {
   text-align: center;
-  font-size: 11px;
+  font-size: 13px;
   color: #777;
 }
 

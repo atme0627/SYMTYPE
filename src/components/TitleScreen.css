@@ -1,19 +1,19 @@
 .title-screen {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
   flex: 1;
+  justify-content: center;
 }
 
 .title-logo {
   text-align: center;
-  margin-top: 8px;
   user-select: none;
 }
 
 .title-logo-deco {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 15px;
   color: #3a6ea5;
   letter-spacing: 0.35em;
   overflow: hidden;
@@ -21,24 +21,30 @@
 }
 
 .title-logo-main {
-  margin: 2px 0;
+  margin: 4px 0;
   font-family: var(--font-mono);
-  font-size: 44px;
-  letter-spacing: 0.22em;
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 0.18em;
   color: #0a246a;
-  text-shadow: 2px 2px 0 #a6caf0;
+  /* ドットフォントを太らせるための重ね打ち + 立体影 */
+  text-shadow:
+    1px 0 0 currentColor,
+    0 1px 0 currentColor,
+    1px 1px 0 currentColor,
+    4px 4px 0 #a6caf0;
 }
 
 .title-logo-sub {
-  font-size: 11px;
-  color: #666;
+  font-size: 13px;
+  color: #555;
   letter-spacing: 0.2em;
 }
 
 .title-options {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
   align-items: flex-start;
   margin: 0 auto;
 }
@@ -46,27 +52,30 @@
 .title-actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
 }
 
 .title-start-btn {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
-  padding: 8px 32px;
+  padding: 9px 40px;
   color: #0a246a;
 }
 
 .title-hint {
   text-align: center;
-  font-size: 11px;
-  color: #777;
+  font-size: 13px;
+  color: #666;
 }
 
 /* ---- Windows XP (Luna) テーマ ---- */
 
 .theme-xp .title-logo-main {
   color: #0855dd;
-  text-shadow: 2px 2px 0 #b5d3f0;
+  text-shadow:
+    1px 0 0 currentColor,
+    0 1px 0 currentColor,
+    1px 1px 0 currentColor,
+    4px 4px 0 #b5d3f0;
 }
 
 .theme-xp .title-logo-deco {
