@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { TypingGame } from '../hooks/useTypingGame'
+import { INITIAL_MS } from '../hooks/useTypingGame'
 import './GameScreen.css'
 
 interface Props {
@@ -8,9 +9,14 @@ interface Props {
 }
 
 export function GameScreen({ lines, game }: Props) {
-  const { lineIndex, charIndex, misses, missFlash, started, elapsedMs, imeWarning } = game
-  const currentLine = lines[Math.min(lineIndex, lines.length - 1)] ?? ''
-  const nextLine = lines[lineIndex + 1]
+  const { lineIndex, charIndex, misses, correct, missFlash, started, timeLeftMs, bonus, imeWarning } =
+    game
+  const currentLine = lines.length > 0 ? lines[lineIndex % lines.length] : ''
+  const nextLine = lines.length > 0 ? lines[(lineIndex + 1) % lines.length] : ''
+
+  const seconds = timeLeftMs / 1000
+  const lowTime = started && timeLeftMs <= 5000
+  const timePercent = Math.min(100, (timeLeftMs / INITIAL_MS) * 100)
 
   // ミスした瞬間だけカーソルを赤くフラッシュさせる
   const [flashing, setFlashing] = useState(false)
@@ -24,11 +30,25 @@ export function GameScreen({ lines, game }: Props) {
   return (
     <div className="game-screen">
       <div className="game-status">
-        <span>
-          LINE {Math.min(lineIndex + 1, lines.length)}/{lines.length}
-        </span>
-        <span>TIME {(elapsedMs / 1000).toFixed(1)}s</span>
+        <span>打鍵 {correct}</span>
         <span className={misses > 0 ? 'game-status-miss' : ''}>MISS {misses}</span>
+      </div>
+
+      <div className={`game-timer${lowTime ? ' game-timer--low' : ''}`}>
+        <span className="game-timer-value">{seconds.toFixed(1)}</span>
+        <span className="game-timer-unit">sec</span>
+        {/* 直近のボーナスを +○.○s とポップアップ表示 */}
+        {bonus && (
+          <span key={bonus.id} className="game-bonus">
+            +{(bonus.amountMs / 1000).toFixed(1)}s
+          </span>
+        )}
+      </div>
+      <div className="game-timer-bar">
+        <div
+          className={`game-timer-bar-fill${lowTime ? ' game-timer-bar-fill--low' : ''}`}
+          style={{ width: `${timePercent}%` }}
+        />
       </div>
 
       <div className="game-field">
@@ -41,13 +61,13 @@ export function GameScreen({ lines, game }: Props) {
             return (
               <span key={i} className={`game-ch ${cls}${flash}`}>
                 {/* 半角スペースは HTML の空白折りたたみで消えるので NBSP で表示 */}
-                {ch === ' ' ? '\u00a0' : ch}
+                {ch === ' ' ? ' ' : ch}
               </span>
             )
           })}
         </div>
         <div className="game-next">
-          NEXT: <span>{nextLine ?? '--- last line! ---'}</span>
+          NEXT: <span>{nextLine}</span>
         </div>
       </div>
 

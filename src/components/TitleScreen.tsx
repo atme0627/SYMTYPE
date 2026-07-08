@@ -40,15 +40,6 @@ export function TitleScreen({ settings, onChange, onStart }: Props) {
           value={settings.layout}
           onChange={(layout) => onChange({ layout })}
         />
-        <ToggleGroup
-          label="スタイル"
-          options={[
-            { value: 'w2k' as const, label: 'Windows 2000' },
-            { value: 'xp' as const, label: 'Windows XP' },
-          ]}
-          value={settings.theme}
-          onChange={(theme) => onChange({ theme })}
-        />
       </div>
 
       <div className="title-actions">

@@ -17,7 +17,8 @@ export function ResultScreen({ result, onRetry, onTitle }: Props) {
       </div>
 
       <div className="result-stats">
-        <span>TIME {(result.timeMs / 1000).toFixed(1)}s</span>
+        <span>打鍵 {result.correct}</span>
+        <span>クリア {result.lines}行</span>
         <span>MISS {result.misses}</span>
         <span>正確率 {(result.accuracy * 100).toFixed(1)}%</span>
         <span>CPM {result.cpm}</span>

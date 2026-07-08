@@ -1,7 +1,6 @@
-export type GenreId = 'kaomoji' | 'programming' | 'slang'
+export type GenreId = 'kaomoji' | 'programming' | 'variety'
 export type Difficulty = 1 | 2 | 3
 export type LayoutId = 'jis' | 'us'
-export type ThemeId = 'w2k' | 'xp'
 
 export interface Problem {
   text: string
@@ -18,13 +17,14 @@ export interface Settings {
   genre: GenreId
   difficulty: Difficulty
   layout: LayoutId
-  theme: ThemeId
 }
 
 /** 1ゲーム終了時の生の計測値 */
 export interface RawResult {
   correct: number
   misses: number
+  /** 打ち切った行数(制限時間内に完了した行) */
+  lines: number
   timeMs: number
 }
 

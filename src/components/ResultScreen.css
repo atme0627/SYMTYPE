@@ -31,7 +31,8 @@
 .result-stats {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
   font-family: var(--font-mono);
   font-size: 15px;
   color: #333;
@@ -53,15 +54,4 @@
   justify-content: center;
   gap: 14px;
   margin-top: 12px;
-}
-
-/* ---- Windows XP (Luna) テーマ ---- */
-
-.theme-xp .result-stats {
-  border: 1px solid #7f9db9;
-  background: #d6e5f5;
-}
-
-.theme-xp .result-header {
-  color: #0855dd;
 }

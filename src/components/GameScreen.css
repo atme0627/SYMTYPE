@@ -22,6 +22,86 @@
   color: #a40000;
 }
 
+.game-timer {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  color: #0a246a;
+}
+
+.game-timer-value {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.game-timer-unit {
+  font-size: 15px;
+  color: #3a6ea5;
+}
+
+.game-timer--low .game-timer-value,
+.game-timer--low .game-timer-unit {
+  color: #d40000;
+  animation: timer-pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes timer-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ボーナス加算のポップアップ(タイマー右横から上へ) */
+.game-bonus {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  margin-left: 46px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a8a3a;
+  text-shadow: 1px 1px 0 #fff;
+  pointer-events: none;
+  animation: bonus-float 0.85s ease-out forwards;
+}
+
+@keyframes bonus-float {
+  0% {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-22px);
+    opacity: 0;
+  }
+}
+
+.game-timer-bar {
+  height: 12px;
+  background: #ffffff;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 1px;
+}
+
+.game-timer-bar-fill {
+  height: 100%;
+  background: linear-gradient(180deg, #4a8fd4 0%, #0a246a 100%);
+  transition: width 0.1s linear;
+}
+
+.game-timer-bar-fill--low {
+  background: linear-gradient(180deg, #e05555 0%, #a40000 100%);
+}
+
 .game-field {
   flex: 1;
   background: #ffffff;
@@ -112,20 +192,4 @@
 .game-help-warning {
   color: #a40000;
   font-weight: bold;
-}
-
-/* ---- Windows XP (Luna) テーマ ---- */
-
-.theme-xp .game-status {
-  border: 1px solid #7f9db9;
-  background: #d6e5f5;
-  color: #0855dd;
-}
-
-.theme-xp .game-field {
-  border: 1px solid #7f9db9;
-}
-
-.theme-xp .game-ch--cur {
-  background: #0855dd;
 }

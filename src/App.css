@@ -26,23 +26,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* ---- OS デスクトップ風の背景 ---- */
-
-/* Windows 2000: 単色ブルーのデスクトップ */
-.page.theme-w2k {
+  /* Windows 2000 の単色ブルーデスクトップ。下部にタスクバー(30px)を確保 */
+  padding-bottom: 30px;
   background: #3a6ea5;
-}
-
-/* Windows XP: Bliss(草原)風の CSS 壁紙 */
-.page.theme-xp {
-  background:
-    radial-gradient(55% 16% at 72% 16%, rgba(255, 255, 255, 0.5) 0%, transparent 70%),
-    radial-gradient(45% 12% at 24% 26%, rgba(255, 255, 255, 0.4) 0%, transparent 70%),
-    radial-gradient(140% 68% at 18% 118%, #63a833 0%, #4e962a 42%, transparent 55%),
-    radial-gradient(150% 62% at 82% 122%, #7cbf44 0%, #5aa930 46%, transparent 58%),
-    linear-gradient(180deg, #1e5fc4 0%, #4a94dd 38%, #9dc9ef 66%, #cfe3d2 72%, #7cbb45 100%);
 }
 
 .page-main {
@@ -82,15 +68,4 @@ body {
 
 .w2k-btn:active {
   border-color: #404040 #ffffff #ffffff #404040;
-}
-
-.theme-xp .w2k-btn {
-  border: 1px solid #003c74;
-  border-radius: 3px;
-  background: linear-gradient(180deg, #ffffff 0%, #f4f2e8 60%, #d8d0bf 100%);
-  padding: 6px 17px;
-}
-
-.theme-xp .w2k-btn:active {
-  background: #d8d0c4;
 }

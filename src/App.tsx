@@ -6,10 +6,11 @@ import { GameScreen } from './components/GameScreen'
 import { ResultScreen } from './components/ResultScreen'
 import { Keyboard } from './components/Keyboard'
 import { AdSlot } from './components/AdSlot'
+import { Taskbar } from './components/Taskbar'
 import { useTypingGame } from './hooks/useTypingGame'
 import { useStageZoom } from './hooks/useStageZoom'
 import { LAYOUTS, findKey } from './data/layouts'
-import { difficultyLabel, genreLabel, pickLines } from './lib/problems'
+import { buildQueue, difficultyLabel, genreLabel } from './lib/problems'
 import { computeScore } from './lib/score'
 import { loadSettings, saveSettings } from './lib/storage'
 import './App.css'
@@ -31,7 +32,7 @@ export default function App() {
   }
 
   const start = useCallback(() => {
-    setLines(pickLines(settings.genre, settings.difficulty))
+    setLines(buildQueue(settings.genre, settings.difficulty))
     setResult(null)
     setPhase('play')
   }, [settings.genre, settings.difficulty])
@@ -64,8 +65,9 @@ export default function App() {
 
   const layout = LAYOUTS[settings.layout]
   const highlight = game.expectedChar !== null ? findKey(layout, game.expectedChar) : null
-  // ステージの設計サイズ。ビューポートが小さいときは丸ごと縮小してスクロールを出さない
-  const zoom = useStageZoom(760, 840)
+  // ステージの設計サイズ。ビューポートが小さいときは丸ごと縮小してスクロールを出さない。
+  // 下部タスクバー(30px)ぶんは高さ予算から差し引く。
+  const zoom = useStageZoom(760, 840, 46)
 
   const windowTitle =
     phase === 'play'
@@ -73,7 +75,7 @@ export default function App() {
       : 'SYMTYPE.EXE'
 
   return (
-    <div className={`page theme-${settings.theme}`}>
+    <div className="page">
       <main className="page-main" style={{ zoom }}>
         <RetroWindow title={windowTitle}>
           {phase === 'title' && (
@@ -89,6 +91,7 @@ export default function App() {
       <aside className="page-aside">
         <AdSlot />
       </aside>
+      <Taskbar />
     </div>
   )
 }

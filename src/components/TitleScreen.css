@@ -21,18 +21,21 @@
 }
 
 .title-logo-main {
-  margin: 4px 0;
+  margin: 6px 0;
   font-family: var(--font-mono);
-  font-size: 60px;
+  font-size: 64px;
   font-weight: bold;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   color: #0a246a;
-  /* ドットフォントを太らせるための重ね打ち + 立体影 */
+  /* 輪郭を描いてドットフォントをさらに肉厚に見せる + 立体影 */
+  -webkit-text-stroke: 2.5px #0a246a;
   text-shadow:
     1px 0 0 currentColor,
+    -1px 0 0 currentColor,
     0 1px 0 currentColor,
-    1px 1px 0 currentColor,
-    4px 4px 0 #a6caf0;
+    0 -1px 0 currentColor,
+    2px 2px 0 currentColor,
+    5px 5px 0 #a6caf0;
 }
 
 .title-logo-sub {
@@ -65,19 +68,4 @@
   text-align: center;
   font-size: 13px;
   color: #666;
-}
-
-/* ---- Windows XP (Luna) テーマ ---- */
-
-.theme-xp .title-logo-main {
-  color: #0855dd;
-  text-shadow:
-    1px 0 0 currentColor,
-    0 1px 0 currentColor,
-    1px 1px 0 currentColor,
-    4px 4px 0 #b5d3f0;
-}
-
-.theme-xp .title-logo-deco {
-  color: #4a90e2;
 }

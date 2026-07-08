@@ -54,16 +54,3 @@
   outline: 1px dotted #000;
   outline-offset: 2px;
 }
-
-/* ---- Windows XP (Luna) テーマ: 緑ドットのラジオ ---- */
-
-.theme-xp .radio-input {
-  border: 1px solid #1d5281;
-  box-shadow: inset 1px 1px 2px rgba(29, 82, 129, 0.35);
-}
-
-.theme-xp .radio-input:checked {
-  background:
-    radial-gradient(circle at 45% 40%, #a4e460 0 1.5px, #4bad1c 3px, transparent 3.8px),
-    #ffffff;
-}

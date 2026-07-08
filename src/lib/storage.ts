@@ -6,7 +6,6 @@ const DEFAULT_SETTINGS: Settings = {
   genre: 'kaomoji',
   difficulty: 1,
   layout: 'jis',
-  theme: 'w2k',
 }
 
 export function loadSettings(): Settings {

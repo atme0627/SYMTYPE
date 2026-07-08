@@ -1,11 +1,11 @@
 import type { Difficulty, GenreData, GenreId } from '../types'
 import kaomoji from '../data/problems/kaomoji.json'
 import programming from '../data/problems/programming.json'
-import slang from '../data/problems/slang.json'
+import variety from '../data/problems/variety.json'
 
 // 新ジャンルを追加するときは src/data/problems/ に JSON を置いて
 // ここの配列と src/types.ts の GenreId に追記する。
-const genreData = [kaomoji, programming, slang] as GenreData[]
+const genreData = [kaomoji, programming, variety] as GenreData[]
 
 export const GENRES = genreData.map(({ id, label }) => ({ id, label }))
 
@@ -14,8 +14,6 @@ export const DIFFICULTIES: { value: Difficulty; label: string }[] = [
   { value: 2, label: 'NORMAL' },
   { value: 3, label: 'HARD' },
 ]
-
-export const LINES_PER_GAME = 5
 
 export function genreLabel(id: GenreId): string {
   return GENRES.find((g) => g.id === id)?.label ?? id
@@ -34,16 +32,18 @@ function shuffle<T>(items: T[]): T[] {
   return arr
 }
 
-/** ジャンルと難易度に合う問題からランダムに1ゲーム分の行を選ぶ */
-export function pickLines(
-  genre: GenreId,
-  difficulty: Difficulty,
-  count = LINES_PER_GAME,
-): string[] {
+/**
+ * 制限時間制のため、尽きないよう十分な長さのシャッフル済み行キューを作る。
+ * プールを繰り返しシャッフルして minLen 行以上を確保する。
+ */
+export function buildQueue(genre: GenreId, difficulty: Difficulty, minLen = 200): string[] {
   const pool =
     genreData
       .find((g) => g.id === genre)
       ?.problems.filter((p) => p.level === difficulty)
       .map((p) => p.text) ?? []
-  return shuffle(pool).slice(0, count)
+  if (pool.length === 0) return []
+  const out: string[] = []
+  while (out.length < minLen) out.push(...shuffle(pool))
+  return out
 }
