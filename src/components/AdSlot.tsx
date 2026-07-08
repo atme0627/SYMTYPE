@@ -7,7 +7,8 @@ import './AdSlot.css'
 export function AdSlot() {
   return (
     <div className="ad-slot">
-      <span>AD SPACE (728 x 90)</span>
+      <span>AD</span>
+      <span>160 x 600</span>
     </div>
   )
 }

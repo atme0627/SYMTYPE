@@ -1,4 +1,8 @@
 .retro-window {
+  /* ウィンドウ内で使うフォント。ドット表示モード(.pixel)が上書きする */
+  --font-ui: Tahoma, 'MS UI Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-mono: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+
   width: 680px;
   max-width: 100%;
   background: #d4d0c8;
@@ -6,9 +10,9 @@
   box-shadow:
     inset 1px 1px 0 #ffffff,
     inset -1px -1px 0 #808080,
-    6px 6px 0 rgba(0, 0, 0, 0.35);
+    6px 6px 0 rgba(0, 0, 0, 0.25);
   padding: 3px;
-  font-family: Tahoma, 'MS UI Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-family: var(--font-ui);
 }
 
 .retro-titlebar {
@@ -63,6 +67,7 @@
   padding: 3px 8px;
   font-size: 12px;
   color: #222;
+  background: #d4d0c8;
   border-bottom: 1px solid #808080;
   box-shadow: 0 1px 0 #ffffff;
   user-select: none;
@@ -71,6 +76,55 @@
 .retro-client {
   min-height: 430px;
   padding: 16px 18px;
+  background: #d4d0c8;
   display: flex;
   flex-direction: column;
+}
+
+/* ---- Windows XP (Luna) テーマ ---- */
+
+.theme-xp .retro-window {
+  background: linear-gradient(180deg, #2f8ef3 0%, #0855dd 30%, #0855dd 100%);
+  border: 1px solid #003399;
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.theme-xp .retro-titlebar {
+  background: linear-gradient(
+    180deg,
+    #5da4f4 0%,
+    #2270e0 8%,
+    #1560d6 40%,
+    #0448c0 86%,
+    #1257ce 100%
+  );
+  border-radius: 6px 6px 0 0;
+  padding: 5px 5px 5px 8px;
+  font-family: 'Trebuchet MS', var(--font-ui);
+  text-shadow: 1px 1px 1px #0a1e57;
+}
+
+.theme-xp .retro-tb-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(180deg, #8fb4ef 0%, #3162c4 100%);
+  color: #fff;
+  line-height: 18px;
+}
+
+.theme-xp .retro-tb-btn-close {
+  background: linear-gradient(180deg, #ec8b6d 0%, #d6492a 100%);
+}
+
+.theme-xp .retro-menubar,
+.theme-xp .retro-client {
+  background: #ece9d8;
+}
+
+.theme-xp .retro-menubar {
+  border-bottom: 1px solid #aca899;
+  box-shadow: none;
 }

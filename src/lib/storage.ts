@@ -9,7 +9,13 @@ const KEY_NICKNAME = 'symtype:nickname'
 const KEY_RANKING = 'symtype:ranking:v1'
 const RANKING_MAX = 10
 
-const DEFAULT_SETTINGS: Settings = { genre: 'kaomoji', difficulty: 1, layout: 'jis' }
+const DEFAULT_SETTINGS: Settings = {
+  genre: 'kaomoji',
+  difficulty: 1,
+  layout: 'jis',
+  theme: 'w2k',
+  pixel: true,
+}
 
 export function loadSettings(): Settings {
   try {

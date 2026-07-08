@@ -7,7 +7,7 @@
 
 .result-header {
   text-align: center;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 18px;
   font-weight: bold;
   color: #0a246a;
@@ -16,7 +16,7 @@
 
 .result-score {
   text-align: center;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 16px;
   color: #333;
 }
@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   gap: 18px;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: #333;
   padding: 6px 8px;
@@ -69,4 +69,19 @@
   justify-content: center;
   gap: 12px;
   margin-top: auto;
+}
+
+/* ---- Windows XP (Luna) テーマ ---- */
+
+.theme-xp .result-stats {
+  border: 1px solid #7f9db9;
+  background: #d6e5f5;
+}
+
+.theme-xp .result-header {
+  color: #0855dd;
+}
+
+.theme-xp .result-name-input {
+  border: 1px solid #7f9db9;
 }

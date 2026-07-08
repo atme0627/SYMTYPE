@@ -44,6 +44,24 @@ export function TitleScreen({ settings, onChange, onStart }: Props) {
           value={settings.layout}
           onChange={(layout) => onChange({ layout })}
         />
+        <ToggleGroup
+          label="スタイル"
+          options={[
+            { value: 'w2k' as const, label: '2000' },
+            { value: 'xp' as const, label: 'XP' },
+          ]}
+          value={settings.theme}
+          onChange={(theme) => onChange({ theme })}
+        />
+        <ToggleGroup
+          label="画面"
+          options={[
+            { value: 'dot', label: 'ドット' },
+            { value: 'smooth', label: 'なめらか' },
+          ]}
+          value={settings.pixel ? 'dot' : 'smooth'}
+          onChange={(v) => onChange({ pixel: v === 'dot' })}
+        />
       </div>
 
       <div className="title-actions">

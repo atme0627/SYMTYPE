@@ -1,6 +1,7 @@
 export type GenreId = 'kaomoji' | 'programming' | 'slang'
 export type Difficulty = 1 | 2 | 3
 export type LayoutId = 'jis' | 'us'
+export type ThemeId = 'w2k' | 'xp'
 
 export interface Problem {
   text: string
@@ -17,6 +18,9 @@ export interface Settings {
   genre: GenreId
   difficulty: Difficulty
   layout: LayoutId
+  theme: ThemeId
+  /** true なら昔のビットマップフォント風(ドットが見える)表示 */
+  pixel: boolean
 }
 
 /** 1ゲーム終了時の生の計測値 */

@@ -12,7 +12,7 @@
 }
 
 .title-logo-deco {
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: #3a6ea5;
   letter-spacing: 0.35em;
@@ -22,7 +22,7 @@
 
 .title-logo-main {
   margin: 2px 0;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 44px;
   letter-spacing: 0.22em;
   color: #0a246a;
@@ -60,4 +60,15 @@
   text-align: center;
   font-size: 11px;
   color: #777;
+}
+
+/* ---- Windows XP (Luna) テーマ ---- */
+
+.theme-xp .title-logo-main {
+  color: #0855dd;
+  text-shadow: 2px 2px 0 #b5d3f0;
+}
+
+.theme-xp .title-logo-deco {
+  color: #4a90e2;
 }

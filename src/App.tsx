@@ -7,6 +7,7 @@ import { ResultScreen } from './components/ResultScreen'
 import { Keyboard } from './components/Keyboard'
 import { AdSlot } from './components/AdSlot'
 import { useTypingGame } from './hooks/useTypingGame'
+import { useStageZoom } from './hooks/useStageZoom'
 import { LAYOUTS, findKey } from './data/layouts'
 import { difficultyLabel, genreLabel, pickLines } from './lib/problems'
 import { computeScore } from './lib/score'
@@ -63,6 +64,8 @@ export default function App() {
 
   const layout = LAYOUTS[settings.layout]
   const highlight = game.expectedChar !== null ? findKey(layout, game.expectedChar) : null
+  // ステージの設計サイズ。ビューポートが小さいときは丸ごと縮小してスクロールを出さない
+  const zoom = useStageZoom(760, 840)
 
   const windowTitle =
     phase === 'play'
@@ -70,8 +73,8 @@ export default function App() {
       : 'SYMTYPE.EXE'
 
   return (
-    <div className="page">
-      <main className="page-main">
+    <div className={`page theme-${settings.theme}${settings.pixel ? ' pixel' : ''}`}>
+      <main className="page-main" style={{ zoom }}>
         <RetroWindow title={windowTitle}>
           {phase === 'title' && (
             <TitleScreen settings={settings} onChange={updateSettings} onStart={start} />
@@ -88,9 +91,9 @@ export default function App() {
         </RetroWindow>
         <Keyboard layout={layout} highlight={highlight} />
       </main>
-      <footer className="page-footer">
+      <aside className="page-aside">
         <AdSlot />
-      </footer>
+      </aside>
     </div>
   )
 }

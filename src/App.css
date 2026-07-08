@@ -1,6 +1,6 @@
 :root {
-  --bg: #17181c;
-  --fg: #c9cdd3;
+  --bg: #4a4e58;
+  --fg: #d6d9de;
   --accent: #39d98a;
 }
 
@@ -8,10 +8,18 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
+  /* ページ全体をビューポートに固定してスクロールさせない */
+  overflow: hidden;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -22,22 +30,37 @@ body {
 }
 
 .page {
-  min-height: 100vh;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 32px;
-  padding: 36px 16px 28px;
+  justify-content: center;
 }
 
 .page-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
 }
 
-.page-footer {
-  margin-top: auto;
-  padding-top: 8px;
+/* 広告は右側固定。ステージと重なる幅ではたたむ */
+.page-aside {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1120px) {
+  .page-aside {
+    display: none;
+  }
+}
+
+/* ドット表示モード: ウィンドウ内だけ昔のビットマップフォント風にする。
+   各コンポーネントは --font-ui / --font-mono を参照する */
+.pixel .retro-window {
+  --font-ui: 'DotGothic16', 'MS Gothic', sans-serif;
+  --font-mono: 'DotGothic16', 'MS Gothic', monospace;
+  -webkit-font-smoothing: none;
 }

@@ -8,7 +8,7 @@
 .game-status {
   display: flex;
   justify-content: space-between;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
   font-weight: bold;
   color: #0a246a;
@@ -54,7 +54,7 @@
 
 .game-line {
   text-align: center;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 24px;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -98,7 +98,7 @@
 
 .game-next {
   text-align: center;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: #999;
 }
@@ -112,4 +112,20 @@
 .game-help-warning {
   color: #a40000;
   font-weight: bold;
+}
+
+/* ---- Windows XP (Luna) テーマ ---- */
+
+.theme-xp .game-status {
+  border: 1px solid #7f9db9;
+  background: #d6e5f5;
+  color: #0855dd;
+}
+
+.theme-xp .game-field {
+  border: 1px solid #7f9db9;
+}
+
+.theme-xp .game-ch--cur {
+  background: #0855dd;
 }

@@ -26,7 +26,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 12px;
-  font-family: 'Courier New', 'Osaka-Mono', 'MS Gothic', monospace;
+  font-family: var(--font-mono);
 }
 
 .ranking-table th {
@@ -53,4 +53,18 @@
 .ranking-row--self {
   background: #bdd3e8;
   font-weight: bold;
+}
+
+/* ---- Windows XP (Luna) テーマ ---- */
+
+.theme-xp .ranking-board {
+  border: 1px solid #7f9db9;
+}
+
+.theme-xp .ranking-board-title {
+  color: #0855dd;
+}
+
+.theme-xp .ranking-row--self {
+  background: #fde3b8;
 }
